@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="" />
+    <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/admin_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +18,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZoMw7eFfdfuJV3iCSzoByAgxa4" />
   <component name="ProjectViewState">
@@ -39,6 +49,9 @@
       <workItem from="1585557249288" duration="1404000" />
       <workItem from="1585562351079" duration="1179000" />
       <workItem from="1585570458346" duration="9195000" />
+      <workItem from="1585644022945" duration="5402000" />
+      <workItem from="1585658665051" duration="9619000" />
+      <workItem from="1585720066602" duration="5480000" />
     </task>
     <servers />
   </component>
@@ -46,17 +59,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="289" width="357" height="146" key="NewPhpFileDialog" timestamp="1585584798284">
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585645240581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="289" width="357" height="146" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585584798284" />
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585645240581" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1585554311211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585554311211" />
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1585570460472">
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1585720092588">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585570460472" />
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585720092588" />
   </component>
 </project>

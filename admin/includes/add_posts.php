@@ -11,12 +11,11 @@ if (isset($_POST['create_post'])) {
     $post_tags = $_POST['post_tags'];
     $post_content = $_POST['post_content'];
     $post_date = date('d-m-y');
-    $post_comment_count = 4;
 
-    $sql = "INSERT INTO posts (post_id, post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) VALUES (NULL,$post_category_id,'$post_title','$post_author',now(),'$post_image','$post_content','$post_tags','$post_comment_count','$post_status')";
+    $sql = "INSERT INTO posts (post_id, post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) VALUES (NULL,$post_category_id,'$post_title','$post_author',now(),'$post_image','$post_content','$post_tags', 0, '$post_status')";
 
     if (!mysqli_query($connection, $sql)) {
-        die("Query failed" . mysqli_error($connection));
+        die("Query failed ". mysqli_error($connection));
     } else {
         move_uploaded_file($post_image_temp, "../images/$post_image");
     }
@@ -52,8 +51,12 @@ if (isset($_POST['create_post'])) {
         <input type="text" class="form-control" name="post_author">
     </div>
     <div class="form-group">
-        <label>Post Status</label>
-        <input type="text" class="form-control" name="post_status">
+        <label>Post Status</label><br>
+        <select name="post_status">
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
+<!--        <input type="text" class="form-control" name="post_status">-->
     </div>
     <div class="form-group">
         <label>Post Image</label>
