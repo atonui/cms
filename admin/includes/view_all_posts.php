@@ -63,6 +63,8 @@
 </table>
 
 <?php
+
+//delete a post
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
@@ -71,6 +73,10 @@ if (isset($_GET['delete'])) {
     if (!mysqli_query($connection, $sql)) {
         die("Query failed " . mysqli_error($connection));
     } else {
+//        delete all comments associated with the post
+        $sql = "DELETE FROM comments WHERE comment_post_id = $id";
+        $results = mysqli_query($connection, $sql);
+        confirmQuery($results);
         header('location:posts.php');
     }
 }

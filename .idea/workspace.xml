@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/admin_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/edit_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/view_all_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +27,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
@@ -52,6 +52,8 @@
       <workItem from="1585644022945" duration="5402000" />
       <workItem from="1585658665051" duration="9619000" />
       <workItem from="1585720066602" duration="5480000" />
+      <workItem from="1585758076315" duration="5463000" />
+      <workItem from="1585842294977" duration="5753000" />
     </task>
     <servers />
   </component>
@@ -59,17 +61,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585645240581">
+    <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585762929762">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585645240581" />
+    <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585762929762" />
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585759305221">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585759305221" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1585554311211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585554311211" />
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1585720092588">
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1585842299229">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585720092588" />
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585842299229" />
   </component>
 </project>
