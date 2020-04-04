@@ -1,7 +1,18 @@
 <?php
 ob_start();
+session_start();
 include '../includes/db.php';
 include 'functions.php';
+
+if (isset($_SESSION['user_role'])){
+    $role = $_SESSION['user_role'];
+    if ($role == 'subscriber') {
+        header('location:../index.php');
+    }
+}
+
+//to add logic of allowing only administrators to login here
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +26,7 @@ include 'functions.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>CMS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

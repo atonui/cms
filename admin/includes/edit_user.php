@@ -39,6 +39,7 @@ if (isset($_GET['id'])) {
 
         if (mysqli_query($connection, $update_query)) {
             move_uploaded_file($user_image_temp, "../images/$user_image");
+            header('location:users.php');
         } else {
             die("Query failed " . mysqli_error($connection));
         }
@@ -70,12 +71,12 @@ if (isset($_GET['id'])) {
             <?php
                 if ($role == 'administrator'){
                     ?>
-                    <option value="<?php echo $role?>"><?php echo $role?></option>
+                    <option value="<?php echo $role?>">Administrator</option>
                     <option value="subscriber">Subscriber</option>
             <?php
                 }else{
                     ?>
-                    <option value="<?php echo $role?>"><?php echo $role?></option>
+                    <option value="<?php echo $role?>">Subscriber</option>
                     <option value="administrator">Administrator</option>
                 <?php
                 }

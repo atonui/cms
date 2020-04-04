@@ -28,7 +28,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-primary" type="submit" name="add_category" value="Add Cartegory">
+                                <input class="btn btn-primary" type="submit" name="add_category" value="Add Category">
 
                             </div>
 
@@ -91,8 +91,8 @@
                                 <?php
                                 //select all categories
                                 findAllCategories();
-                                ?>
-                                <?php //delete query
+
+                                //delete query
                                 deleteCategories()
                                 ?>
 

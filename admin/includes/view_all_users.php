@@ -32,7 +32,7 @@
         <td><?php echo $user_first_name ?></td>
         <td><?php echo $user_last_name ?></td>
         <td><?php echo $user_email ?></td>
-        <td><?php echo $role ?></td>
+        <td><?php echo ucwords($role) ?></td>
         <td><?php echo $date_created ?></td>
         <td><a href="users.php?source=edit_user&id=<?php echo $user_id ?>">Edit</a> </td>
         <td><a href="users.php?delete=<?php echo $user_id ?>">Delete</a> </td>
