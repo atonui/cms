@@ -55,3 +55,48 @@ function confirmQuery($result){
         die("Query failed ".mysqli_error($connection));
     }
 }
+
+function deletePosts($post_id){
+    global $connection;
+    $delete_query = "DELETE FROM posts WHERE post_id = $post_id";
+    if (!mysqli_query($connection, $delete_query)) {
+        die("Query failed " . mysqli_error($connection));
+    } else {
+//        delete all comments associated with the post
+        $delete_comment = "DELETE FROM comments WHERE comment_post_id = $post_id";
+        $results = mysqli_query($connection, $delete_comment);
+        confirmQuery($results);
+        header('location:posts.php');
+    }
+}
+
+function cleanData($data){
+    global $connection;
+    $data = strtolower($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    $data = mysqli_real_escape_string($connection, $data); // escapes special characters usually used for SQL statements, it helps prevent sql injections
+
+    return $data;
+}
+
+//function to verify password strength and matches
+function passwordChecker($password, $confirm_password){
+    $password_err ='';
+    if ($password != $confirm_password) {
+        $password_err = 'Oops! Your passwords do not seem to match';
+    } elseif (strlen($password) < 8) {
+        $password_err = 'Your password is less than 8 characters';
+
+        //check for password strength using regex
+    } elseif (!(preg_match('/[\'^£$!%&*()}{@#~?><>,|=_+¬-]/', $password))) { //regex pattern to check if password contains special characters
+        $password_err = 'Your password does not contain any special characters';
+    }
+    return $password_err;
+}
+
+//function to securely hash passwords
+function passwordHash($password){
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    return $password;
+}

@@ -14,10 +14,10 @@ include './admin/functions.php'
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-            <h1 class="page-header">
-                Page Heading
-                <small>Secondary Text</small>
-            </h1>
+<!--            <h1 class="page-header">-->
+<!--                A Blog About My Journey to Being a Developer-->
+<!--                <small>I also write other random stuff in here</small>-->
+<!--            </h1>-->
 
             <?php
             if (isset($_GET['p_id'])) {
@@ -48,9 +48,7 @@ include './admin/functions.php'
                     <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                     <hr>
                     <p> <?php echo $post_content ?> </p>
-                    <a class="btn btn-primary" href="#">Read More <span
-                            class="glyphicon glyphicon-chevron-right"></span></a>
-
+                    
                     <hr>
 
 
@@ -68,22 +66,26 @@ include './admin/functions.php'
                     $post_comment_id = $_GET['p_id'];
                     $comment_author = $_POST['comment_author'];
                     $comment_email = $_POST['comment_email'];
-                    $comment_author = $_POST['comment_author'];
                     $comment_content = $_POST['comment_content'];
 
+                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
 
-                    $sql = "INSERT INTO comments (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`) VALUES (NULL, $post_comment_id, '$comment_author','$comment_email','$comment_content')";
 
-                    $results = mysqli_query($connection, $sql);
+                        $sql = "INSERT INTO comments (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`) VALUES (NULL, $post_comment_id, '$comment_author','$comment_email','$comment_content')";
 
-                    confirmQuery($results);
+                        $results = mysqli_query($connection, $sql);
+
+                        confirmQuery($results);
 
 //                    query to increment the comment count in posts table every time a comment is posted
-                    $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_comment_id ";
+                        $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_comment_id ";
 
-                    $queryResults = mysqli_query($connection, $query);
+                        $queryResults = mysqli_query($connection, $query);
 
-                    confirmQuery($queryResults);
+                        confirmQuery($queryResults);
+                    }else{
+                        echo "<script>alert('Fields Cannot be empty')</script>";
+                    }
 
 
                 }
@@ -93,15 +95,15 @@ include './admin/functions.php'
                 <form role="form" action="" method="post">
                     <div class="form-group">
                         <label>Name</label>
-                        <input class="form-control" type="text" name="comment_author">
+                        <input class="form-control" type="text" name="comment_author" required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" type="email" name="comment_email">
+                        <input class="form-control" type="email" name="comment_email" required>
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
-                        <textarea class="form-control" rows="3" name="comment_content"></textarea>
+                        <textarea class="form-control" rows="3" name="comment_content" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" name="create_comment">Submit</button>
                 </form>

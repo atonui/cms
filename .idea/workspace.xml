@@ -4,12 +4,24 @@
     <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/add_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/admin_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/admin_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/admin_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/edit_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +80,21 @@
       <workItem from="1585932700792" duration="6365000" />
       <workItem from="1585989341175" duration="305000" />
       <workItem from="1585989735650" duration="3205000" />
+      <workItem from="1585997025739" duration="3211000" />
+      <workItem from="1586073629724" duration="3201000" />
+      <workItem from="1586077457660" duration="288000" />
+      <workItem from="1586077852880" duration="16000" />
+      <workItem from="1586080523130" duration="300000" />
+      <workItem from="1586080940585" duration="408000" />
+      <workItem from="1586090247221" duration="1227000" />
+      <workItem from="1586101840763" duration="2063000" />
+      <workItem from="1586161405916" duration="1990000" />
+      <workItem from="1586164477165" duration="11588000" />
+      <workItem from="1586187930121" duration="1951000" />
+      <workItem from="1586195884624" duration="1366000" />
+      <workItem from="1586247448333" duration="8887000" />
+      <workItem from="1586269693229" duration="917000" />
+      <workItem from="1586362826076" duration="4104000" />
     </task>
     <servers />
   </component>
@@ -79,17 +106,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585762929762" />
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585989547236">
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585998934109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585989547236" />
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585998934109" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1585554311211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585554311211" />
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1585989736685">
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1586429247430">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585989736685" />
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586429247430" />
   </component>
 </project>

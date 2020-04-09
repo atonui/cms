@@ -4,8 +4,8 @@
 if (isset($_GET['id'])) {
     $user_id = $_GET['id'];
 
-    $posts_query = "SELECT * FROM users WHERE user_id = $user_id";
-    $results = mysqli_query($connection, $posts_query);
+    $users_query = "SELECT * FROM users WHERE user_id = $user_id";
+    $results = mysqli_query($connection, $users_query);
 
     while ($row = mysqli_fetch_assoc($results)) {
         $firstname = $row['user_firstname'];

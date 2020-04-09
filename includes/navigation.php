@@ -15,23 +15,34 @@
                 <ul class="nav navbar-nav">
 
                 <?php
-
-                    $sql = "SELECT * FROM categories";
-                    $results = mysqli_query($connection, $sql);
-
-                    while($row = mysqli_fetch_assoc($results)){
-                        $cat_title = $row['cat_title'];
-                        echo "<li>
-                                <a href='#'>$cat_title</a>
+                        if (isset($_SESSION['user_role'])){
+                            echo "<li>
+                                <a href='admin/profile.php'>Profile</a>
                             </li>";
-                    }
-
-
-
+                            if ($_SESSION['user_role'] == 'administrator'){
+                                echo "<li>
+                                    <a href=\"admin\">Admin</a>
+                                  </li>";
+                            }
+                            if (isset($_GET['p_id'])){
+                                $post_id = $_GET['p_id'];
+                                echo "<li>
+                                    <a href=\"admin/posts.php?source=edit_post&id=$post_id\">Edit Post</a>
+                                  </li>";
+                            }
+                            echo "<li>
+                                <a href=\"includes/logout.php\"><i class=\"fa fa-fw fa-power-off\"></i> Log Out</a>
+                            </li>";
+                        }else{
+                            echo "<li>
+                                <a href=\"registration.php\"><i class=\"fa fa-fw fa-power-off\"></i>Register Here</a>
+                            </li>";
+                        }
                 ?>
-                    <li>
-                        <a href="admin">Admin</a>
-                    </li>
+
+
+                
+
                    <!--  <li>
                         <a href="#">Services</a>
                     </li>
