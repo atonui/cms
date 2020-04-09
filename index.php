@@ -2,9 +2,20 @@
     include 'includes/header.php';
     include 'includes/db.php';
 
-?>
-    <!-- Navigation -->
-    <?php include 'includes/navigation.php'; ?>
+    //Navigation
+    include 'includes/navigation.php';
+
+    if (isset($_GET['msg'])){
+        $message = $_GET['msg'];
+        if ($message == 'registered'){
+            echo "<p class='alert alert-success'>Your already registered, please login here!</p>";
+        }
+        if ($message == 'inserted'){
+            echo "<p class='alert alert-success'>Your have been registered, please login here!</p>";
+        }
+    }
+
+    ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -14,8 +25,8 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
             <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
+                A Blog About My Journey to Being a Developer
+                    <small>I also write other random stuff in here</small>
                 </h1>
 
             <?php
@@ -46,10 +57,12 @@
                         </p>
                         <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?> </p>
                         <hr>
-                        <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
+                        <a href="post.php?p_id=<?php echo $post_id; ?>">
+                            <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
+                        </a>
                         <hr>
                         <p> <?php echo $post_content ?> </p>
-                        <a class="btn btn-primary" href="#">Read More <span
+                        <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span
                                 class="glyphicon glyphicon-chevron-right"></span></a>
 
                         <hr>

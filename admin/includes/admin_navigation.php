@@ -13,12 +13,17 @@
     <ul class="nav navbar-right top-nav">
         <li><a href="../index.php">Home</a></li>
 
-
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                <?php
+                    if (isset($_SESSION['firstname'])){
+                        echo $_SESSION['firstname'];
+                    }
+                ?>
+                <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                    <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -65,8 +70,8 @@
             </li>
             </li>
 
-            <li class="active">
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Profile </a>
+            <li class="">
+                <a href="profile.php"><i class="fa fa-fw fa-file"></i> Profile </a>
             </li>
         </ul>
     </div>

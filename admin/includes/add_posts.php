@@ -15,9 +15,12 @@ if (isset($_POST['create_post'])) {
     $sql = "INSERT INTO posts (post_id, post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) VALUES (NULL,$post_category_id,'$post_title','$post_author',now(),'$post_image','$post_content','$post_tags', 0, '$post_status')";
 
     if (!mysqli_query($connection, $sql)) {
-        die("Query failed ". mysqli_error($connection));
+        die("Query failed " . mysqli_error($connection));
     } else {
         move_uploaded_file($post_image_temp, "../images/$post_image");
+
+        $post_id = mysqli_insert_id($connection);
+        echo "<p class='alert alert-success'><a href='../post.php?p_id=$post_id'>Post Created!</a></p>";
     }
 }
 ?>
@@ -40,7 +43,6 @@ if (isset($_POST['create_post'])) {
                 $cat_title = $row['cat_title'];
 
                 echo " <option value=\"$cat_id\">$cat_title</option>";
-
             }
             ?>
 
@@ -53,10 +55,11 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label>Post Status</label><br>
         <select name="post_status">
+            <option value="draft">Post Status</option>
             <option value="published">Published</option>
             <option value="draft">Draft</option>
         </select>
-<!--        <input type="text" class="form-control" name="post_status">-->
+        <!--        <input type="text" class="form-control" name="post_status">-->
     </div>
     <div class="form-group">
         <label>Post Image</label>
@@ -68,7 +71,8 @@ if (isset($_POST['create_post'])) {
     </div>
     <div class="form-group">
         <label>Post Content</label>
-        <textarea class="form-control" name="post_content" cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="post_content" cols="50" rows="10" id="body"></textarea>
+        
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" name="create_post" value="Publish Post">

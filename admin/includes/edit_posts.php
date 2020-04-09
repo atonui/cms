@@ -43,6 +43,7 @@ if (isset($_GET['id'])) {
 
         if (mysqli_query($connection, $update_query)){
             move_uploaded_file($post_image_temp,"../images/$post_image");
+            echo "<p class='alert alert-success'><a href='../post.php?p_id=$post_id'>Post Updated!</a></p>";
         }else{
             die("Query failed ".mysqli_error($connection));
         }
@@ -85,8 +86,20 @@ if (isset($_GET['id'])) {
     </div>
     <div class="form-group">
         <select name="post_status">
-            <option value="published">Published</option>
-            <option value="draft">Draft</option>
+            <label>Post Status</label><br>
+           <?php
+            if ($post_status == 'draft'){
+                ?>
+                <option value="<?php echo $post_status?>">Draft</option>
+                <option value="published">Published</option>
+                <?php
+            }else{
+                ?>
+                <option value="<?php echo $post_status?>">Published</option>
+                <option value="draft">Draft</option>
+                <?php
+            }
+            ?>
         </select>
     </div>
     </div>
@@ -103,7 +116,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="form-group">
         <label>Post Content</label>
-        <textarea class="form-control" name="post_content" cols="30" rows="10"><?php echo $post_content ?></textarea>
+        <textarea class="form-control" name="post_content" cols="30" rows="10" id="body"><?php echo $post_content ?></textarea>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" name="update_post" value="Update Post">

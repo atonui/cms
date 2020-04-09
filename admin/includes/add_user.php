@@ -20,6 +20,9 @@ if (isset($_POST['create_user'])) {
         die("Query failed ". mysqli_error($connection));
     } else {
         move_uploaded_file($user_image_temp, "../images/$user_image");
+        echo "<div class='alert alert-primary' role='alert'>
+                <a href=',/users.php'>User Created</a>
+            </div>";
     }
 }
 ?>

@@ -1,7 +1,20 @@
+<form action="" method="post">
 <table class="table table-hover table-responsive">
+    <div id="bulkOptionsContainer" class="col-xs-4">
+        <select name="bulk_options" id="" class="form-control">
+            <option value="">Select Options</option>
+            <option value="published">Publish</option>
+            <option value="draft">Draft</option>
+            <option value="delete">Delete</option>
+        </select>
+    </div>
+    <div class="col-xs-4">
+        <input type="submit" name="submit" class="btn btn-success" value="Apply">
+        <a href="posts.php?source=add_post" class="btn btn-primary">Add New Post</a>
+    </div>
     <thead>
         <tr>
-            <th>Id</th>
+            <th><input type="checkbox" id="selectAllBoxes"></th>
             <th>Author</th>
             <th>Title</th>
             <th>Category</th>
@@ -43,9 +56,9 @@
             echo "<tr>";
         ?>
 
-            <td><?php echo $post_id ?></td>
+            <td><input type="checkbox" class="checkBoxes" name="checkBoxArray[]" value="<?php echo $post_id ?>"></td>
             <td><?php echo $post_author ?></td>
-            <td><?php echo $post_title ?></td>
+            <td><a href='../post.php?p_id=<?php echo $post_id ?>'><?php echo $post_title ?></a></td>
             <td><?php echo $cat_title ?></td>
             <td><?php echo $post_status ?></td>
             <td><img width="100" class="img-responsive" src="../images/<?php echo $post_image ?>"></td>
@@ -61,6 +74,7 @@
         ?>
     </tbody>
 </table>
+</form>
 
 <?php
 
@@ -68,16 +82,30 @@
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
-    $sql = "DELETE FROM posts WHERE post_id = $id";
+    deletePosts($id);
+}
 
-    if (!mysqli_query($connection, $sql)) {
-        die("Query failed " . mysqli_error($connection));
-    } else {
-//        delete all comments associated with the post
-        $sql = "DELETE FROM comments WHERE comment_post_id = $id";
-        $results = mysqli_query($connection, $sql);
-        confirmQuery($results);
-        header('location:posts.php');
+if (isset($_POST['checkBoxArray'])){
+    foreach ($_POST['checkBoxArray'] as $postValueId){
+        $bulk_options = $_POST['bulk_options'];
+        switch ($bulk_options){
+            case 'published':
+                $query = "UPDATE posts SET post_status = 'published' WHERE post_id = $postValueId";
+                $results = mysqli_query($connection, $query);
+                confirmQuery($results);
+                header('location:posts.php');
+                break;
+            case 'draft':
+                $draft_query = "UPDATE posts SET post_status = 'draft' WHERE post_id = $postValueId";
+                $results = mysqli_query($connection, $draft_query);
+                confirmQuery($results);
+                header('location:posts.php');
+                break;
+            case 'delete':
+               deletePosts($postValueId);
+                break;
+
+        }
     }
 }
 ?>
