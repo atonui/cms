@@ -14,11 +14,6 @@ include './admin/functions.php'
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-<!--            <h1 class="page-header">-->
-<!--                A Blog About My Journey to Being a Developer-->
-<!--                <small>I also write other random stuff in here</small>-->
-<!--            </h1>-->
-
             <?php
             if (isset($_GET['p_id'])) {
                 $post_id = $_GET['p_id'];
@@ -55,113 +50,102 @@ include './admin/functions.php'
                 <?php
                 }
             }
-            ?>
+           // <!-- Comments Form -->
 
-
-            <!-- Comments Form -->
-
-            <?php
 //            inserting comments to db
-                if (isset($_POST['create_comment'])){
-<<<<<<< HEAD
+                if (isset($_POST['create_comment'])) {
                     $post_comment_id = cleanData($_GET['p_id']);
                     $comment_author = cleanData($_POST['comment_author']);
                     $comment_email = cleanData($_POST['comment_email']);
                     $comment_content = cleanData($_POST['comment_content']);
 
-                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
-=======
-                    $post_comment_id = $_GET['p_id'];
-                    $comment_author = $_POST['comment_author'];
-                    $comment_email = $_POST['comment_email'];
-                    $comment_content = $_POST['comment_content'];
->>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
+                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
+                        $post_comment_id = $_GET['p_id'];
+                        $comment_author = $_POST['comment_author'];
+                        $comment_email = $_POST['comment_email'];
+                        $comment_content = $_POST['comment_content'];
 
-                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
+                        if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
 
+                            $sql = "INSERT INTO comments (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`) VALUES (NULL, $post_comment_id, '$comment_author','$comment_email','$comment_content')";
 
-                        $sql = "INSERT INTO comments (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`) VALUES (NULL, $post_comment_id, '$comment_author','$comment_email','$comment_content')";
+                            $results = mysqli_query($connection, $sql);
 
-                        $results = mysqli_query($connection, $sql);
-
-                        confirmQuery($results);
+                            confirmQuery($results);
 
 //                    query to increment the comment count in posts table every time a comment is posted
-                        $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_comment_id ";
+                            $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_comment_id ";
 
-                        $queryResults = mysqli_query($connection, $query);
+                            $queryResults = mysqli_query($connection, $query);
 
-                        confirmQuery($queryResults);
-                    }else{
-                        echo "<script>alert('Fields Cannot be empty')</script>";
+                            confirmQuery($queryResults);
+                        } else {
+                            echo "<script>alert('Fields Cannot be empty')</script>";
+                        }
                     }
-
-
                 }
-            ?>
-            <div class="well">
-                <h4>Leave a Comment:</h4>
-                <form role="form" action="" method="post">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input class="form-control" type="text" name="comment_author" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input class="form-control" type="email" name="comment_email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Comment</label>
-                        <textarea class="form-control" rows="3" name="comment_content" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="create_comment">Submit</button>
-                </form>
-            </div>
-
-            <hr>
-
-            <!-- Posted Comments -->
-
-            <?php
-            if (isset($_GET['p_id'])) {
-                $post_id = $_GET['p_id'];
-
-                $sql = "SELECT * FROM comments WHERE comment_post_id = $post_id AND comment_status = 'Approved' ORDER BY comment_id DESC ";
-
-                $results = mysqli_query($connection, $sql);
-                confirmQuery($results);
-
-                while ($row = mysqli_fetch_assoc($results)) {
-                    $comment_author = $row['comment_author'];
-                    $comment_content = $row['comment_content'];
-                    $comment_date = $row['comment_date'];
-
                     ?>
-
-                    <!-- Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="http://placehold.it/64x64" alt="">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading"><?php echo $comment_author ?>
-                                <small><?php echo $comment_date ?></small>
-                            </h4>
-
-                            <?php echo $comment_content; ?>
-                        </div>
+                    <div class="well">
+                        <h4>Leave a Comment:</h4>
+                        <form role="form" action="" method="post">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text" name="comment_author" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" type="email" name="comment_email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Comment</label>
+                                <textarea class="form-control" rows="3" name="comment_content" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="create_comment">Submit</button>
+                        </form>
                     </div>
+
+                    <hr>
+
+                    <!-- Posted Comments -->
 
                     <?php
-                }
-            }?>
+                    if (isset($_GET['p_id'])) {
+                        $post_id = $_GET['p_id'];
 
+                        $sql = "SELECT * FROM comments WHERE comment_post_id = $post_id AND comment_status = 'Approved' ORDER BY comment_id DESC ";
 
+                        $results = mysqli_query($connection, $sql);
+                        confirmQuery($results);
 
-        </div>
+                        while ($row = mysqli_fetch_assoc($results)) {
+                            $comment_author = $row['comment_author'];
+                            $comment_content = $row['comment_content'];
+                            $comment_date = $row['comment_date'];
+
+                            ?>
+
+                            <!-- Comment -->
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><?php echo $comment_author ?>
+                                        <small><?php echo $comment_date ?></small>
+                                    </h4>
+
+                                    <?php echo $comment_content; ?>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                    }
+                    ?>
+                    </div>
 
         <!-- Blog Sidebar Widgets Column -->
-        <?php include 'includes/sidebar.php';?>
+        <?php include 'includes/sidebar.php'; ?>
 
     </div>
     <!-- /.row -->
@@ -169,4 +153,4 @@ include './admin/functions.php'
     <hr>
     <!-- Footer -->
 
-<?php include 'includes/footer.php';
+<?php include 'includes/footer.php'; ?>

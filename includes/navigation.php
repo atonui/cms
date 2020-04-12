@@ -17,11 +17,9 @@
                 <?php
                         if (isset($_SESSION['user_role'])){
                             echo "<li>
-<<<<<<< HEAD
+
                                 <a href='profile.php'>Profile</a>
-=======
-                                <a href='admin/profile.php'>Profile</a>
->>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
+
                             </li>";
                             if ($_SESSION['user_role'] == 'administrator'){
                                 echo "<li>
@@ -44,15 +42,6 @@
                         }
                 ?>
 
-
-                
-
-                   <!--  <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

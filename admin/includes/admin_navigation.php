@@ -23,11 +23,11 @@
                 <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-<<<<<<< HEAD
+
                     <a href="../profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-=======
+
                     <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
->>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
+
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -75,11 +75,11 @@
             </li>
 
             <li class="">
-<<<<<<< HEAD
+
                 <a href="../profile.php"><i class="fa fa-fw fa-file"></i> Profile </a>
-=======
+
                 <a href="profile.php"><i class="fa fa-fw fa-file"></i> Profile </a>
->>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
+
             </li>
         </ul>
     </div>
