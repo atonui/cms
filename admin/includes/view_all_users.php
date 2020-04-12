@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     <?php
-    $users_query = "SELECT * FROM `users`";
+    $users_query = "SELECT * FROM users ORDER BY user_id DESC";
     $results = mysqli_query($connection, $users_query);
 
     while ($row = mysqli_fetch_assoc($results)) {
@@ -35,7 +35,7 @@
         <td><?php echo ucwords($role) ?></td>
         <td><?php echo $date_created ?></td>
         <td><a href="users.php?source=edit_user&id=<?php echo $user_id ?>">Edit</a> </td>
-        <td><a href="users.php?delete=<?php echo $user_id ?>">Delete</a> </td>
+        <td><a onclick="javascript: return confirm('Are you sure you want to delete?')" href="users.php?delete=<?php echo $user_id ?>">Delete</a> </td>
 
         <?php
     }

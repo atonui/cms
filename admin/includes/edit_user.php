@@ -18,13 +18,14 @@ if (isset($_GET['id'])) {
 
 
     if (isset($_POST['update_user'])) {
-        $firstname = $_POST['user_firstname'];
-        $lastname = $_POST['user_lastname'];
-        $username = $_POST['username'];
-        $email = $_POST['user_email'];
-        $role = $_POST['role'];
+        $firstname = cleanData($_POST['user_firstname']);
+        $lastname = cleanData($_POST['user_lastname']);
+        $username = cleanData($_POST['username']);
+        $email = cleanData($_POST['user_email']);
+        $role = cleanData($_POST['role']);
 
         $user_image = $_FILES['user_image']['name'];
+        $user_image = cleanData($user_image);
         $user_image_temp = $_FILES['user_image']['tmp_name'];
 
         if (empty($user_image)) {

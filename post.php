@@ -33,6 +33,7 @@ include './admin/functions.php'
                     $post_image = $row['post_image'];
                     $post_content = $row['post_content'];
                     $post_date = $row['post_date'];
+                    $post_author_id = $row['post_author_id'];
 
                     ?>
 
@@ -41,7 +42,7 @@ include './admin/functions.php'
                         <a href="#"><?php echo $post_title ?></a>
                     </h2>
                     <p class="lead">
-                        by <a href="index.php"><?php echo $post_author ?></a>
+                        by <a href="author_posts.php?author_id=<?php echo $post_author_id; ?>"><?php echo $post_author ?></a>
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?> </p>
                     <hr>
@@ -50,7 +51,6 @@ include './admin/functions.php'
                     <p> <?php echo $post_content ?> </p>
                     
                     <hr>
-
 
                 <?php
                 }
@@ -63,10 +63,10 @@ include './admin/functions.php'
             <?php
 //            inserting comments to db
                 if (isset($_POST['create_comment'])){
-                    $post_comment_id = $_GET['p_id'];
-                    $comment_author = $_POST['comment_author'];
-                    $comment_email = $_POST['comment_email'];
-                    $comment_content = $_POST['comment_content'];
+                    $post_comment_id = cleanData($_GET['p_id']);
+                    $comment_author = cleanData($_POST['comment_author']);
+                    $comment_email = cleanData($_POST['comment_email']);
+                    $comment_content = cleanData($_POST['comment_content']);
 
                     if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
 

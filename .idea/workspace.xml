@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/add_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/admin_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/admin_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/admin_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_navigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/edit_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/view_all_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
     </list>
@@ -33,6 +30,9 @@
       <executable />
     </execution>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="cms" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -45,13 +45,20 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/" />
     </key>
   </component>
@@ -95,6 +102,9 @@
       <workItem from="1586247448333" duration="8887000" />
       <workItem from="1586269693229" duration="917000" />
       <workItem from="1586362826076" duration="4104000" />
+      <workItem from="1586429244466" duration="4983000" />
+      <workItem from="1586445682112" duration="2171000" />
+      <workItem from="1586526588948" duration="11252000" />
     </task>
     <servers />
   </component>
@@ -102,21 +112,49 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="278" y="24" width="800" height="675" key="#Deployment" timestamp="1586527804238">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="278" y="24" width="800" height="675" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1586527804238" />
+    <state x="278" y="24" width="800" height="675" key="#Options" timestamp="1586527632264">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="278" y="24" width="800" height="675" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1586527632264" />
+    <state x="278" y="24" width="800" height="675" key="#Servers" timestamp="1586445744095">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="278" y="24" width="800" height="675" key="#Servers/0.0.1366.728@0.0.1366.728" timestamp="1586445744095" />
+    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586527624682">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586527624682" />
     <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585762929762">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585762929762" />
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585998934109">
+    <state x="461" y="119" width="424" height="482" key="FileChooserDialogImpl" timestamp="1586527668231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585998934109" />
-    <state x="187" y="0" key="SettingsEditor" timestamp="1585554311211">
+    <state x="461" y="119" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586527668231" />
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1586611014683">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585554311211" />
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1586429247430">
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1586611014683" />
+    <state x="187" y="0" key="SettingsEditor" timestamp="1586436889873">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586429247430" />
+    <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586436889873" />
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1586526590306">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586526590306" />
+    <state x="580" y="85" width="196" height="550" key="ftp.server.browser" timestamp="1586527701621">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="580" y="85" width="196" height="550" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1586527701621" />
+    <state x="546" y="258" width="254" height="205" key="publish.login" timestamp="1586526675703">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="546" y="258" width="254" height="205" key="publish.login/0.0.1366.728@0.0.1366.728" timestamp="1586526675703" />
   </component>
 </project>

@@ -1,8 +1,11 @@
 <?php
-include 'includes/admin_header.php';
+include 'includes/header.php';
+include 'includes/db.php';
+include 'admin/functions.php';
 
 if (!isset($_SESSION['username'])){
     header('location:../index.php');
+    exit();
 }
     $user_id = $_SESSION['user_id'];
 
@@ -20,10 +23,10 @@ if (!isset($_SESSION['username'])){
 
 
     if (isset($_POST['update_user'])) {
-        $firstname = $_POST['user_firstname'];
-        $lastname = $_POST['user_lastname'];
-        $username = $_POST['username'];
-        $email = $_POST['user_email'];
+        $firstname = cleanData($_POST['user_firstname']);
+        $lastname = cleanData($_POST['user_lastname']);
+        $username = cleanData($_POST['username']);
+        $email = cleanData($_POST['user_email']);
         $role = $_POST['role'];
 
         $user_image = $_FILES['user_image']['name'];
@@ -53,11 +56,11 @@ if (!isset($_SESSION['username'])){
     <div id="wrapper">
 
     <!-- Navigation -->
-<?php include 'includes/admin_navigation.php'; ?>
+<?php include 'includes/navigation.php'; ?>
 
     <div id="page-wrapper">
 
-    <div class="container-fluid">
+    <div class="container">
 
         <!-- Page Heading -->
         <div class="row">
@@ -91,7 +94,7 @@ if (!isset($_SESSION['username'])){
                     <?php echo ucwords($role); ?>
                 </div>
                 <div class="form-group">
-                    <img width="100" src="../images/<?php echo $user_image; ?>">
+                    <img width="100" src="./images/<?php echo $user_image; ?>">
                 </div>
                 <div class="form-group">
                     <label>Profile Picture</label>
@@ -108,4 +111,4 @@ if (!isset($_SESSION['username'])){
     </div>
     <!-- /#page-wrapper -->
 
-<?php include 'includes/admin_footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

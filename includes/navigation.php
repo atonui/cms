@@ -17,7 +17,7 @@
                 <?php
                         if (isset($_SESSION['user_role'])){
                             echo "<li>
-                                <a href='admin/profile.php'>Profile</a>
+                                <a href='profile.php'>Profile</a>
                             </li>";
                             if ($_SESSION['user_role'] == 'administrator'){
                                 echo "<li>

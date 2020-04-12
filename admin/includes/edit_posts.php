@@ -21,15 +21,17 @@ if (isset($_GET['id'])) {
     }
 
     if(isset($_POST['update_post'])){
-        $post_title = $_POST['title'];
-        $post_author = $_POST['post_author'];
-        $post_status = $_POST['post_status'];
-        $post_tags = $_POST['post_tags'];
-        $post_content = $_POST['post_content'];
-        $post_category_id = $_POST['post_category'];
+        $post_title = cleanData($_POST['title']);
+        $post_author = cleanData($_POST['post_author']);
+        $post_category_id = cleanData($_POST['post_category']);
+        $post_status = cleanData($_POST['post_status']);
 
         $post_image = $_FILES['post_image']['name'];
+        $post_image = cleanData($post_image);
         $post_image_temp = $_FILES['post_image']['tmp_name'];
+
+        $post_tags = cleanData($_POST['post_tags']);
+        $post_content = cleanData($_POST['post_content']);
 
         if(empty($post_image)){
             $query = "SELECT * FROM posts WHERE post_id = $post_id";

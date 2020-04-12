@@ -17,7 +17,7 @@
     </thead>
     <tbody>
     <?php
-    $posts_query = "SELECT * FROM `comments`";
+    $posts_query = "SELECT * FROM comments";
     $results = mysqli_query($connection, $posts_query);
 
     while ($row = mysqli_fetch_assoc($results)) {
@@ -50,7 +50,7 @@
         <td><?php echo $comment_date ?></td>
         <td><a href="comments.php?approve=<?php echo $comment_id ?>">Approve</a> </td>
         <td><a href="comments.php?unapprove=<?php echo $comment_id ?>">Unapproved</a> </td>
-        <td><a href="comments.php?delete=<?php echo $comment_id ?>&p_id=<?php echo $comment_post_id?>">Delete</a> </td>
+        <td><a onclick="javascript: return confirm('Are you sure you want to delete?')" href="comments.php?delete=<?php echo $comment_id ?>&p_id=<?php echo $comment_post_id?>">Delete</a> </td>
 
         <?php
     }

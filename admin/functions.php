@@ -72,9 +72,9 @@ function deletePosts($post_id){
 
 function cleanData($data){
     global $connection;
-    $data = strtolower($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
+    //$data = strtolower($data);
+    //$data = stripslashes($data);
+    //$data = htmlspecialchars($data);
     $data = mysqli_real_escape_string($connection, $data); // escapes special characters usually used for SQL statements, it helps prevent sql injections
 
     return $data;

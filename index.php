@@ -30,7 +30,7 @@
                 </h1>
 
             <?php
-                $sql = "SELECT * FROM posts WHERE post_status = 'published'";
+                $sql = "SELECT * FROM posts WHERE post_status = 'published' ORDER BY post_id DESC";
 
                 $results = mysqli_query($connection, $sql);
 
@@ -45,6 +45,7 @@
                         $post_image = $row['post_image'];
                         $post_content = substr($row['post_content'], 0, 100);
                         $post_date = $row['post_date'];
+                        $post_author_id = $row['post_author_id'];
 
                         ?>
 
@@ -53,7 +54,7 @@
                             <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title ?></a>
                         </h2>
                         <p class="lead">
-                            by <a href="index.php"><?php echo $post_author ?></a>
+                            by <a href="author_posts.php?author_id=<?php echo $post_author_id; ?>"><?php echo $post_author ?></a>
                         </p>
                         <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?> </p>
                         <hr>

@@ -30,7 +30,7 @@
     </thead>
     <tbody>
         <?php
-        $posts_query = "SELECT * FROM `posts`";
+        $posts_query = "SELECT * FROM posts ORDER BY post_id DESC";
         $results = mysqli_query($connection, $posts_query);
 
         while ($row = mysqli_fetch_assoc($results)) {
@@ -66,7 +66,7 @@
             <td><?php echo $post_comment_count ?></td>
             <td><?php echo $post_date ?></td>
             <td><a href="posts.php?source=edit_post&id=<?php echo $post_id ?>">Edit</a></td>
-            <td><a href="posts.php?delete=<?php echo $post_id ?>">Delete</a></td>
+            <td><a onclick="javascript: return confirm('Are you sure want to delete?')" href="posts.php?delete=<?php echo $post_id ?>">Delete</a></td>
 
         <?php
         }

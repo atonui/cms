@@ -1,17 +1,17 @@
 <?php
 if (isset($_POST['create_user'])) {
-    $firstname = $_POST['user_firstname'];
-    $lastname = $_POST['user_lastname'];
-    $username = $_POST['username'];
-    $email = $_POST['user_email'];
-    $password = $_POST['user_password'];
-    $role = $_POST['role'];
+    $firstname = cleanData($_POST['user_firstname']);
+    $lastname = cleanData($_POST['user_lastname']);
+    $username = cleanData($_POST['username']);
+    $email = cleanData($_POST['user_email']);
+    $role = cleanData($_POST['role']);
 
     $user_image = $_FILES['user_image']['name'];
+    $user_image = cleanData($user_image);
     $user_image_temp = $_FILES['user_image']['tmp_name'];
+    $password = $_POST['user_password'];
 
 //    hash password
-
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO `users`(username, user_password, user_firstname, user_lastname, user_email, user_image, role) VALUES ('$username', '$password', '$firstname', '$lastname', '$email', '$user_image','$role')";
