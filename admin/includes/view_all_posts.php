@@ -23,6 +23,7 @@
             <th>Tags</th>
             <th>Comments</th>
             <th>Date</th>
+            <th>Views</th>
             <th>Edit</th>
             <th>Delete</th>
 
@@ -44,6 +45,7 @@
             $post_tags = $row['post_tags'];
             $post_comment_count = $row['post_comment_count'];
             $post_status = $row['post_status'];
+            $post_views = $row['post_views_count'];
 
             $select_category_query = "SELECT * FROM categories WHERE cat_id = '$post_category_id' ";
 
@@ -65,6 +67,7 @@
             <td><?php echo $post_tags ?></td>
             <td><?php echo $post_comment_count ?></td>
             <td><?php echo $post_date ?></td>
+            <td><?php echo $post_views ?></td>
             <td><a href="posts.php?source=edit_post&id=<?php echo $post_id ?>">Edit</a></td>
             <td><a onclick="javascript: return confirm('Are you sure want to delete?')" href="posts.php?delete=<?php echo $post_id ?>">Delete</a></td>
 

@@ -17,7 +17,11 @@ include './admin/functions.php'
             <?php
             if (isset($_GET['p_id'])) {
                 $post_id = $_GET['p_id'];
+//                count the views on the post
+                $views_query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $post_id";
+                $views_results = mysqli_query($connection, $views_query);
 
+                confirmQuery($views_results);
 
                 $sql = "SELECT * FROM posts WHERE post_id = $post_id";
 
@@ -29,6 +33,7 @@ include './admin/functions.php'
                     $post_content = $row['post_content'];
                     $post_date = $row['post_date'];
                     $post_author_id = $row['post_author_id'];
+                    $post_views = $row['post_views_count'];
 
                     ?>
 
@@ -40,6 +45,8 @@ include './admin/functions.php'
                         by <a href="author_posts.php?author_id=<?php echo $post_author_id; ?>"><?php echo $post_author ?></a>
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?> </p>
+
+                    <p><span class="glyphicon glyphicon-eye-open" style="color: #2e6da4"></span> <?php echo $post_views ?> </p>
                     <hr>
                     <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                     <hr>
@@ -49,6 +56,8 @@ include './admin/functions.php'
 
                 <?php
                 }
+            }else{
+                header('location:index.php');
             }
            // <!-- Comments Form -->
 

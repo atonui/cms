@@ -30,28 +30,7 @@
                 </h1>
 
             <?php
-            $per_page = 2;
-
-            if (isset($_GET['page'])){
-                $page = $_GET['page'];
-            }else{
-                $page = "";
-            }
-
-            if ($page == "" || $page == 1){ //means this is the homepage
-                $page_1 = 0;
-            }else{
-                $page_1 = ($page*$per_page) - $per_page;
-            }
-                $post_count_query = "SELECT * FROM posts";
-
-                $post_count_results = mysqli_query($connection, $post_count_query);
-
-                $post_count = mysqli_num_rows($post_count_results);
-
-                $post_count = ceil($post_count/$per_page);
-
-                $sql = "SELECT * FROM posts WHERE post_status = 'published' ORDER BY post_id DESC LIMIT $page_1, $per_page";
+                $sql = "SELECT * FROM posts WHERE post_status = 'published' ORDER BY post_id DESC";
 
                 $results = mysqli_query($connection, $sql);
 
@@ -106,17 +85,5 @@
 
         <hr>
         <!-- Footer -->
-    <ul class="pager">
-        <?php
-            for ($i=1; $i<=$post_count; $i++) {
-                if ($i == $page) {
-                    echo "<li><a class='active_link' href=\"index.php?page=$i\">$i</a></li>";
-                } else {
-                    echo "<li><a href=\"index.php?page=$i\">$i</a></li>";
-                }
-            }
-
-        ?>
-    </ul>
 
 <?php include 'includes/footer.php';
