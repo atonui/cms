@@ -63,10 +63,19 @@ include './admin/functions.php'
             <?php
 //            inserting comments to db
                 if (isset($_POST['create_comment'])){
+<<<<<<< HEAD
                     $post_comment_id = cleanData($_GET['p_id']);
                     $comment_author = cleanData($_POST['comment_author']);
                     $comment_email = cleanData($_POST['comment_email']);
                     $comment_content = cleanData($_POST['comment_content']);
+
+                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
+=======
+                    $post_comment_id = $_GET['p_id'];
+                    $comment_author = $_POST['comment_author'];
+                    $comment_email = $_POST['comment_email'];
+                    $comment_content = $_POST['comment_content'];
+>>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
 
                     if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content) ) {
 

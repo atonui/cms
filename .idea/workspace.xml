@@ -4,6 +4,7 @@
     <list default="true" id="56cdce10-b879-40dc-8f32-f3283d5af0cd" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/admin/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/add_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_user.php" afterDir="false" />
@@ -17,6 +18,25 @@
       <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/admin/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/add_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/add_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/add_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/admin_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/admin_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/admin_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/admin_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/edit_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/edit_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/view_all_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/view_all_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
+>>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
     </list>
@@ -102,9 +122,12 @@
       <workItem from="1586247448333" duration="8887000" />
       <workItem from="1586269693229" duration="917000" />
       <workItem from="1586362826076" duration="4104000" />
+<<<<<<< HEAD
       <workItem from="1586429244466" duration="4983000" />
       <workItem from="1586445682112" duration="2171000" />
       <workItem from="1586526588948" duration="11252000" />
+=======
+>>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
     </task>
     <servers />
   </component>
@@ -132,6 +155,7 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="426" y="220" width="504" height="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585762929762" />
+<<<<<<< HEAD
     <state x="461" y="119" width="424" height="482" key="FileChooserDialogImpl" timestamp="1586527668231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -156,5 +180,19 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="546" y="258" width="254" height="205" key="publish.login/0.0.1366.728@0.0.1366.728" timestamp="1586526675703" />
+=======
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog" timestamp="1585998934109">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="289" width="357" height="148" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1585998934109" />
+    <state x="187" y="0" key="SettingsEditor" timestamp="1585554311211">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585554311211" />
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1586429247430">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="355" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586429247430" />
+>>>>>>> d4ad79d3109a8562a8a2fd455625ed41fce3fa4d
   </component>
 </project>
