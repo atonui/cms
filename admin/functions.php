@@ -103,30 +103,40 @@ function passwordHash($password){
 }
 
 function countUsers(){
-    global $connection;
-    $session = session_id();
-    $time = time();
-    $time_out_in_seconds = 60;
-    $time_out = $time - $time_out_in_seconds;
+    if (isset($_GET['onlineusers'])) {
+        global $connection;
+        if (!$connection){
+            session_start();
+            include '../includes/db.php';
+            $session = session_id();
+            $time = time();
+            $time_out_in_seconds = 5;
+            $time_out = $time - $time_out_in_seconds;
+            $user_id = $_SESSION['user_id'];
 
-    $query = "SELECT * FROM users_online WHERE session = '$session'";
+            $query = "SELECT * FROM users_online WHERE session = '$session'";
 
-    $results = mysqli_query($connection, $query);
+            $results = mysqli_query($connection, $query);
 
-    $count = mysqli_num_rows($results);
+            $count = mysqli_num_rows($results);
 
-    if ($count == NULL){ //user is not found so start tracking the logged in user
-        $query = "INSERT INTO users_online(session, time ) VALUES('$session', '$time')";
-        $results = mysqli_query($connection, $query);
-        confirmQuery($results);
-    }else { //user is already logged in
-        $query = "UPDATE users_online SET time = $time WHERE session = '$session'";
-        $results = mysqli_query($connection, $query);
-        confirmQuery($results);
+            if ($count == NULL) { //user is not found so start tracking the logged in user
+                $query = "INSERT INTO users_online(session, time, user_id) VALUES('$session', '$time', $user_id)";
+                $results = mysqli_query($connection, $query);
+                confirmQuery($results);
+            } else { //user is already logged in
+                $query = "UPDATE users_online SET time = $time WHERE session = '$session'";
+                $results = mysqli_query($connection, $query);
+                confirmQuery($results);
+            }
+
+            $query = "SELECT * FROM users_online WHERE time > $time_out";
+            $results = mysqli_query($connection, $query);
+            confirmQuery($results);
+            echo mysqli_num_rows($results);
+        }
+
     }
-
-    $query = "SELECT * FROM users_online WHERE time > $time_out";
-    $results = mysqli_query($connection, $query);
-    confirmQuery($results);
-    return mysqli_num_rows($results);
 }
+
+countUsers();

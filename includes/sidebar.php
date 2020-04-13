@@ -49,7 +49,7 @@
                                         $cat_id = $row['cat_id'];
                                         $cat_title = $row['cat_title'];
                                         echo "<li>
-                                                <a href='category.php?category=$cat_id'>$cat_title</a>
+                                                <a href='/cms/category/$cat_id'>$cat_title</a>
                                             </li>";
                                     }
                                 ?>

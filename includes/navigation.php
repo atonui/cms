@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Home</a>
+                <a class="navbar-brand" href="/cms/index">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,7 +18,7 @@
                         if (isset($_SESSION['user_role'])){
                             echo "<li>
 
-                                <a href='profile.php'>Profile</a>
+                                <a href='/cms/profile.php'>Profile</a>
 
                             </li>";
                             if ($_SESSION['user_role'] == 'administrator'){
@@ -29,15 +29,15 @@
                             if (isset($_GET['p_id'])){
                                 $post_id = $_GET['p_id'];
                                 echo "<li>
-                                    <a href=\"admin/posts.php?source=edit_post&id=$post_id\">Edit Post</a>
+                                    <a href=\"/cms/admin/posts.php?source=edit_post&id=$post_id\">Edit Post</a>
                                   </li>";
                             }
                             echo "<li>
-                                <a href=\"includes/logout.php\"><i class=\"fa fa-fw fa-power-off\"></i> Log Out</a>
+                                <a href=\"/cms/includes/logout.php\"><i class=\"fa fa-fw fa-power-off\"></i> Log Out</a>
                             </li>";
                         }else{
                             echo "<li>
-                                <a href=\"registration.php\"><i class=\"fa fa-fw fa-power-off\"></i>Register Here</a>
+                                <a href=\"/cms/registration\"><i class=\"fa fa-fw fa-power-off\"></i>Register Here</a>
                             </li>";
                         }
                 ?>

@@ -13,12 +13,12 @@
     <title>CMS Home</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/cms/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-home.css" rel="stylesheet">
+    <link href="/cms/css/blog-home.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/cms/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -48,7 +48,7 @@ include './admin/functions.php'
 
                     <p><span class="glyphicon glyphicon-eye-open" style="color: #2e6da4"></span> <?php echo $post_views ?> </p>
                     <hr>
-                    <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
+                    <img class="img-responsive" src="/cms/images/<?php echo $post_image ?>" alt="">
                     <hr>
                     <p> <?php echo $post_content ?> </p>
                     
