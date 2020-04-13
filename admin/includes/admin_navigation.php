@@ -11,6 +11,7 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
+        <li><a href="online_users.php"><?php echo countUsers();?>: Online</a></li>
         <li><a href="../index.php">Home</a></li>
 
         <li class="dropdown">
@@ -23,11 +24,7 @@
                 <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-
                     <a href="../profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-
-                    <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -77,8 +74,6 @@
             <li class="">
 
                 <a href="../profile.php"><i class="fa fa-fw fa-file"></i> Profile </a>
-
-                <a href="profile.php"><i class="fa fa-fw fa-file"></i> Profile </a>
 
             </li>
         </ul>

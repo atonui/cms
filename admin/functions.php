@@ -101,3 +101,32 @@ function passwordHash($password){
     $password = password_hash($password, PASSWORD_DEFAULT);
     return $password;
 }
+
+function countUsers(){
+    global $connection;
+    $session = session_id();
+    $time = time();
+    $time_out_in_seconds = 60;
+    $time_out = $time - $time_out_in_seconds;
+
+    $query = "SELECT * FROM users_online WHERE session = '$session'";
+
+    $results = mysqli_query($connection, $query);
+
+    $count = mysqli_num_rows($results);
+
+    if ($count == NULL){ //user is not found so start tracking the logged in user
+        $query = "INSERT INTO users_online(session, time ) VALUES('$session', '$time')";
+        $results = mysqli_query($connection, $query);
+        confirmQuery($results);
+    }else { //user is already logged in
+        $query = "UPDATE users_online SET time = $time WHERE session = '$session'";
+        $results = mysqli_query($connection, $query);
+        confirmQuery($results);
+    }
+
+    $query = "SELECT * FROM users_online WHERE time > $time_out";
+    $results = mysqli_query($connection, $query);
+    confirmQuery($results);
+    return mysqli_num_rows($results);
+}

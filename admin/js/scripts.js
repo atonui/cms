@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-    // EDITOR CKEDITOR
+    // EDITOR CKEDITOR, WYSWYG editor
     ClassicEditor
         .create(document.querySelector('#body'))
         .catch(error => {
             console.error(error);
         });
 
-    // REST OF THE CODE
+    // check all boxes in view all posts
 
     $('#selectAllBoxes').click(function (event) {
 
@@ -25,6 +25,8 @@ $(document).ready(function() {
         }
 
     });
+
+    //pretty loader delay in admin panel
 
     var div_box = "<div id='load-screen'><div id='loading'></div></div>";
 
