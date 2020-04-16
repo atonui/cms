@@ -48,15 +48,19 @@
 
 //delete users
 if (isset($_GET['delete'])) {
-    $user_id = $_GET['delete'];
+    if ($_SESSION['user_role'] == 'administrator') {
+        $user_id = mysqli_real_escape_string($connection, $_GET['delete']);
 
-    $sql = "DELETE FROM users WHERE user_id = $user_id";
+        $sql = "DELETE FROM users WHERE user_id = $user_id";
 
-    $results = mysqli_query($connection, $sql);
+        $results = mysqli_query($connection, $sql);
 
-    confirmQuery($results);
+        confirmQuery($results);
 
-    header('location:users.php');
+        header('location:users.php');
+    }else{
+        echo "<p class='alert alert-warning'>Illegal Operation!</p>";
+    }
 }
 
 ?>

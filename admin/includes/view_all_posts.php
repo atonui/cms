@@ -21,12 +21,11 @@
             <th>Status</th>
             <th>Image</th>
             <th>Tags</th>
-            <th>Comments</th>
+            <th>Comments</th> <!--link and page to view post specific comments?-->
             <th>Date</th>
             <th>Views</th>
             <th>Edit</th>
             <th>Delete</th>
-
         </tr>
     </thead>
     <tbody>
@@ -43,9 +42,12 @@
             $post_image = $row['post_image'];
             $post_content = $row['post_content'];
             $post_tags = $row['post_tags'];
-            $post_comment_count = $row['post_comment_count'];
             $post_status = $row['post_status'];
             $post_views = $row['post_views_count'];
+
+            $comment_count_query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+            $comment_count = mysqli_query($connection, $comment_count_query);
+            $post_comment_count = mysqli_num_rows($comment_count);
 
             $select_category_query = "SELECT * FROM categories WHERE cat_id = '$post_category_id' ";
 
@@ -65,7 +67,7 @@
             <td><?php echo $post_status ?></td>
             <td><img width="100" class="img-responsive" src="../images/<?php echo $post_image ?>"></td>
             <td><?php echo $post_tags ?></td>
-            <td><?php echo $post_comment_count ?></td>
+            <td><a href="post_comment.php?id=<?php echo $post_id ?>&title=<?php echo $post_title ?>"><?php echo $post_comment_count ?></a></td>
             <td><?php echo $post_date ?></td>
             <td><?php echo $post_views ?></td>
             <td><a href="posts.php?source=edit_post&id=<?php echo $post_id ?>">Edit</a></td>
@@ -83,9 +85,12 @@
 
 //delete a post
 if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-
-    deletePosts($id);
+    if ($_SESSION['user_role'] == 'administrator') {
+        $id = mysqli_real_escape_string($connection,$_GET['delete']);
+        deletePosts($id);
+    }else{
+        echo "<p class='alert alert-warning'>Illegal Operation!</p>";
+    }
 }
 
 if (isset($_POST['checkBoxArray'])){

@@ -1,6 +1,10 @@
 RewriteEngine on
 
-RewriteRule ^(index|registration|logout)$ $1.php [NC,L]
+RewriteRule ^(index|registration)$ $1.php [NC,L]
+
+RewriteRule ^(admin/index)$ $1.php [NC,L]
+
+RewriteRule ^(includes/logout)$ $1.php [NC,L]
 
 RewriteRule ^post/(\d+)$ post.php?p_id=$1 [NC,L]
 

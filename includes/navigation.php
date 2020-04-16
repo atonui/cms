@@ -23,7 +23,7 @@
                             </li>";
                             if ($_SESSION['user_role'] == 'administrator'){
                                 echo "<li>
-                                    <a href=\"admin\">Admin</a>
+                                    <a href=\"/cms/admin\">Admin</a>
                                   </li>";
                             }
                             if (isset($_GET['p_id'])){
@@ -33,7 +33,7 @@
                                   </li>";
                             }
                             echo "<li>
-                                <a href=\"/cms/includes/logout.php\"><i class=\"fa fa-fw fa-power-off\"></i> Log Out</a>
+                                <a href=\"/cms/includes/logout\"><i class=\"fa fa-fw fa-power-off\"></i> Log Out</a>
                             </li>";
                         }else{
                             echo "<li>

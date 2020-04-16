@@ -81,13 +81,6 @@ include './admin/functions.php'
                             $results = mysqli_query($connection, $sql);
 
                             confirmQuery($results);
-
-//                    query to increment the comment count in posts table every time a comment is posted
-                            $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_comment_id ";
-
-                            $queryResults = mysqli_query($connection, $query);
-
-                            confirmQuery($queryResults);
                         } else {
                             echo "<script>alert('Fields Cannot be empty')</script>";
                         }

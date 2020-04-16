@@ -11,8 +11,6 @@
         <th>Approve</th>
         <th>Unapproved</th>
         <th>Delete</th>
-
-
     </tr>
     </thead>
     <tbody>

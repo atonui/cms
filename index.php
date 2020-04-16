@@ -30,7 +30,7 @@
                 </h1>
 
             <?php
-            $per_page = 2;
+            $per_page = 5; //create button for results per page
 
             if (isset($_GET['page'])){
                 $page = $_GET['page'];

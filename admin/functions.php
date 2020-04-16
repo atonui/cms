@@ -1,4 +1,7 @@
 <?php
+//include "./PHPMailer-master/src/PHPMailer.php";
+//include "./PHPMailer-master/src/SMTP.php";
+
 function insertCategory(){
 
     global $connection;
