@@ -5,7 +5,36 @@ include './admin/functions.php'
 
 ?>
     <!-- Navigation -->
-<?php include 'includes/navigation.php'; ?>
+<?php
+    include 'includes/navigation.php';
+
+    if (isset($_POST['liked'])){
+
+        $post_id = $_POST['post_id'];
+        $user_id = $_POST['user_id'];
+//        select this post
+        $search_post_query = "SELECT * FROM posts WHERE post_id = $post_id ";
+        $result = mysqli_query($connection, $search_post_query);
+        $post_result = mysqli_fetch_array($result);
+        $likes = $post_result['likes'];
+
+        if (mysqli_num_rows($result)){
+            echo $post_result['post_id'];
+        }
+//        update the post table with likes
+
+        $update_likes_query = "UPDATE posts SET likes = $likes+1 WHERE post_id = $post_id";
+        $likes_results = mysqli_query($connection, $update_likes_query);
+
+//        likes table with likes
+        $likes_query = "INSERT into likes(user_id, post_id) VALUES($user_id, $post_id)";
+        $results = mysqli_query($connection,$likes_query);
+        confirmQuery($results);
+        exit();
+
+
+    }
+?>
 
     <!-- Page Content -->
     <div class="container">
@@ -53,6 +82,14 @@ include './admin/functions.php'
                     <p> <?php echo $post_content ?> </p>
                     
                     <hr>
+<!--                    Likes button-->
+                    <div class="row">
+                        <p class="pull-right"><a class="like" href="#"><span class="glyphicon glyphicon-thumbs-up"></span> : 10</a></p>
+                    </div>
+                    <div class="row">
+                        <p class="pull-right">Like: 10</p>
+                    </div>
+                    <div class="clearfix"></div>
 
                 <?php
                 }
@@ -149,10 +186,29 @@ include './admin/functions.php'
         <!-- Blog Sidebar Widgets Column -->
         <?php include 'includes/sidebar.php'; ?>
 
-    </div>
+        </div>
     <!-- /.row -->
 
     <hr>
     <!-- Footer -->
 
 <?php include 'includes/footer.php'; ?>
+
+        <script>
+            $(document).ready(function () {
+                var post_id = <?php echo $post_id; ?>;
+                    var user_id = 3;
+                $('.like').click(function () {
+                    $.ajax({
+                       url:"<?php echo $post_id?>",
+                       type:'post',
+                       data: {
+                           'liked': 1,
+                           'post_id': post_id,
+                           'user_id': user_id
+                       }
+                    });
+                });
+            })
+
+        </script>

@@ -14,10 +14,10 @@ if (isset($_POST['create_post'])) {
     $post_date = date('d-m-y');
     $post_author_id = $_SESSION['user_id'];
 
-    $sql = "INSERT INTO posts (post_id, post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status, post_author_id) VALUES (NULL,$post_category_id,'$post_title','$post_author',now(),'$post_image','$post_content','$post_tags', 0, '$post_status', $post_author_id)";
+    $sql = "INSERT INTO posts (post_id, post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status, post_author_id) VALUES (NULL,$post_category_id,'$post_title','$post_author',now(),'$post_image','$post_content','$post_tags', '$post_status', $post_author_id)";
 
     if (!mysqli_query($connection, $sql)) {
-        die("Query failed " . mysqli_error($connection));
+        die("Insertion query failed " . mysqli_error($connection));
     } else {
         move_uploaded_file($post_image_temp, "../images/$post_image");
 

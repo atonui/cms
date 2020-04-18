@@ -37,7 +37,7 @@
                             </li>";
                         }else{
                             echo "<li>
-                                <a href=\"/cms/registration\"><i class=\"fa fa-fw fa-power-off\"></i>Register Here</a>
+                                <a href=\"/cms/registration\"><i class=\"fa fa-fw fa-user\"></i>Register Here</a>
                             </li>";
                         }
                 ?>
